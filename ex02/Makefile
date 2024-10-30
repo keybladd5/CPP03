@@ -12,17 +12,17 @@
 
 
 
-NAME	=	ScavTrap
+NAME	=	FragTrap
 
 CC		=	c++
 
 FLAGS	=	-g -Wall -Wextra -Werror -std=c++98 -MMD -fsanitize=address -pedantic 
 
-SRC		=	ScavTrap.cpp ClapTrap.cpp main.cpp 
+SRC		=	FragTrap.cpp ClapTrap.cpp main.cpp ScavTrap.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
-INCLUDE = 	ClapTrap.hpp ScavTrap.hpp
+INCLUDE = 	ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
 
 DEPS	=	$(SRC:.cpp=.d)
 
@@ -41,15 +41,15 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
 		@$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
-		@echo "${PURPLE}CPP01 ex01 binary Compiled${NC}"
+		@echo "${PURPLE}CPP03 ex02 binary Compiled${NC}"
 
 clean:
 		@rm -rf $(OBJ) $(DEPS)
-		@echo "${RED}CPP01 ex01 object removed${NC}"
+		@echo "${RED}CPP03 ex02 object removed${NC}"
 
 fclean:		clean
 		@rm -rf $(NAME)
-		@echo "${RED}CPP01 ex01 binary removed${NC}"
+		@echo "${RED}CPP03 ex02 binary removed${NC}"
 
 re:		fclean all
 

@@ -10,21 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap jhonny("Jhonny");
-	ScavTrap copy(jhonny);
-	ScavTrap badboy("Bad Boy");
+	FragTrap jhonny("Jhonny");
+	FragTrap copy(jhonny);
+	FragTrap badboy("Bad Boy");
 
-	jhonny.attack("Bad Boy");
-	badboy.takeDamage(5);
-	copy.attack("Bad Boy");
-	badboy.takeDamage(10);
-	jhonny.guardGate();
-	for(int i = 0; i < 50; i++)
-		jhonny.attack("Bad Boy");
-
+	badboy.highFive();
+	copy.highFive();
+	std::cout << "\n";
+	jhonny.highFive();
+	for (int i = 0; i < 100; i++)
+		jhonny.highFive();
 }
 

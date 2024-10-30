@@ -15,11 +15,12 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::cout << "Default FragTrap constructor called" << std::endl;
+	std::cout << "Default FragTrap constructor called for";
 	_name = "(null)";
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
+	std::cout << _name << std::endl;
 }
 
 FragTrap::FragTrap(std::string src) : ClapTrap(src)
@@ -65,5 +66,5 @@ void	FragTrap::highFive(void)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "Default FragTrap destructor called" << std::endl;
+	std::cout << "Default FragTrap destructor called for " << _name << std::endl;
 }

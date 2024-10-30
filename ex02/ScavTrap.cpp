@@ -14,11 +14,12 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "Default ScavTrap constructor called" << std::endl;
+	std::cout << "Default ScavTrap constructor called for ";
 	_name = "(null)";
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	std::cout << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string src) : ClapTrap(src)
@@ -76,5 +77,5 @@ void	ScavTrap::guardGate(void)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "Default ScavTrap destructor called" << std::endl;
+	std::cout << "Default ScavTrap destructor called for " << _name << std::endl;
 }
