@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 12:11:35 by polmarti          #+#    #+#             */
-/*   Updated: 2024/10/28 11:15:04 by polmarti         ###   ########.fr       */
+/*   Created: 2024/10/28 12:40:19 by polmarti          #+#    #+#             */
+/*   Updated: 2024/10/28 12:40:21 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	ScavTrap jhonny("Jhonny");
-	ScavTrap copy(jhonny);
-	ScavTrap badboy("Bad Boy");
+	public:
+			FragTrap(void);
+			FragTrap(std::string src);
+			FragTrap(FragTrap const &src);
+			FragTrap&	operator=(FragTrap const &src);
+			void	highFive(void);
+			~FragTrap(void);
+};
 
-	jhonny.attack("Bad Boy");
-	badboy.takeDamage(5);
-	copy.attack("Bad Boy");
-	badboy.takeDamage(10);
-	badboy.attack("manolo");
-	jhonny.guardGate();
-	for(int i = 0; i < 50; i++)
-		jhonny.attack("Bad Boy");
-
-}
-
+#endif

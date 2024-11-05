@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 12:11:35 by polmarti          #+#    #+#             */
-/*   Updated: 2024/10/28 11:15:04 by polmarti         ###   ########.fr       */
+/*   Created: 2024/10/31 10:25:52 by polmarti          #+#    #+#             */
+/*   Updated: 2024/10/31 10:25:54 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef DIAMOND_TRAP_HPP
+# define DIAMOND_TRAP_HPP
 
-int	main(void)
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	ScavTrap jhonny("Jhonny");
-	ScavTrap copy(jhonny);
-	ScavTrap badboy("Bad Boy");
+	private:
+			std::string _name;
 
-	jhonny.attack("Bad Boy");
-	badboy.takeDamage(5);
-	copy.attack("Bad Boy");
-	badboy.takeDamage(10);
-	badboy.attack("manolo");
-	jhonny.guardGate();
-	for(int i = 0; i < 50; i++)
-		jhonny.attack("Bad Boy");
+	public:
+			DiamondTrap(void);
+			DiamondTrap(std::string src);
+			DiamondTrap(DiamondTrap const &src);
+			DiamondTrap&	operator=(DiamondTrap const &src);
+			void	whoAmI(void);
+			~DiamondTrap(void);
+};
 
-}
-
+#endif

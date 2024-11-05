@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 12:11:35 by polmarti          #+#    #+#             */
-/*   Updated: 2024/10/28 11:15:04 by polmarti         ###   ########.fr       */
+/*   Created: 2024/10/28 10:19:56 by polmarti          #+#    #+#             */
+/*   Updated: 2024/10/28 10:19:58 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAV_TRAP_HPP
+# define SCAV_TRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	ScavTrap jhonny("Jhonny");
-	ScavTrap copy(jhonny);
-	ScavTrap badboy("Bad Boy");
+	protected:
+			unsigned int _tmp;
+	public:
+			ScavTrap(void);
+			ScavTrap(std::string src);
+			ScavTrap(ScavTrap const &src);
+			ScavTrap&	operator=(ScavTrap const &src);
+			void	attack(const std::string& target);
+			void	guardGate(void);
+			~ScavTrap(void);
+};
 
-	jhonny.attack("Bad Boy");
-	badboy.takeDamage(5);
-	copy.attack("Bad Boy");
-	badboy.takeDamage(10);
-	badboy.attack("manolo");
-	jhonny.guardGate();
-	for(int i = 0; i < 50; i++)
-		jhonny.attack("Bad Boy");
-
-}
-
+#endif

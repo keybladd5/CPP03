@@ -10,22 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap jhonny("Jhonny");
-	ScavTrap copy(jhonny);
-	ScavTrap badboy("Bad Boy");
+	DiamondTrap jhonny("Jhonny");
+	DiamondTrap copy(jhonny);
+	DiamondTrap badboy("Bad Boy");
 
-	jhonny.attack("Bad Boy");
-	badboy.takeDamage(5);
-	copy.attack("Bad Boy");
-	badboy.takeDamage(10);
-	badboy.attack("manolo");
-	jhonny.guardGate();
-	for(int i = 0; i < 50; i++)
-		jhonny.attack("Bad Boy");
-
+	badboy.whoAmI();
+	copy.whoAmI();
+	std::cout << "\n";
+	jhonny.whoAmI();
+	for (int i = 0; i < 100; i++)
+		jhonny.attack("lombarda");
 }
 
